@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+.heade{
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+}
+.back{
+    height: 700px;
+    
+
+}
+.cust{
+    height: 200px;
+}
+.back1{
+    width: 100px;
+    height: 100px;
+}
+.back2{
+    background-image:linear-gradient(to right, rgba(255, 255, 255, 0.412) , rgba(255, 255, 255, 0.537)), url("logo.png"); /* The image used */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: 450px;
+    width: 80%;
+    height: 550px;
+    opacity: 0.2;
+    position:absolute;
+    margin-right: 15%;
+    overflow: hidden;
+    z-index: -1;
+}
+.back3{
+    opacity: 1;
+    position: relative;
+}
+.back5{
+    background-image:linear-gradient(to right, rgba(255, 255, 255, 0.412) , rgba(255, 255, 255, 0.537)), url("logo.png"); /* The image used */
+
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: 280px;
+    width: 75%;
+    height: 550px;
+    opacity: 0.2;
+    position:absolute;
+    margin-right: 15%;
+    margin-left: 5%;
+    margin-top: 6%;
+    overflow: hidden;
+    z-index: -1;
+}
+.back6{
+    position: relative;
+}

@@ -1,0 +1,1 @@
+@extends('admin.dashlayout.dashlay2')
