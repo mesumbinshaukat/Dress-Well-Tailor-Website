@@ -35,21 +35,18 @@
                                         @endif
                                         <div class="form-group">
                                             <label><strong>Email</strong></label>
-                                            <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                                            <input type="email" class="form-control" name="email" placeholder="Enter Email" value="{{old('email')}}" required autocomplete="email" autofocus>
                                         </div>
                                         <div class="form-group">
                                             <label><strong>Password</strong></label>
-                                            <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                                            <input type="password" name="password" class="form-control" placeholder="Enter Password" required autocomplete="current-password" minlength="6">
                                         </div>
                                         <div class="form-row d-flex justify-content-between mt-4 mb-2">
                                             <div class="form-group">
                                                 <div class="form-check ml-2">
-                                                    <input class="form-check-input" type="checkbox" id="basic_checkbox_1">
-                                                    <label class="form-check-label" for="basic_checkbox_1">Remember me</label>
+                                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" value="1">
+                                                    <label class="form-check-label" for="remember">Remember me</label>
                                                 </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <a href="page-forgot-password.html">Forgot Password?</a>
                                             </div>
                                         </div>
                                         <div class="text-center">

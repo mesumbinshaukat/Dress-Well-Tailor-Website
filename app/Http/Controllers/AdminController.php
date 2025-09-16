@@ -14,23 +14,50 @@ use App\Models\PantShirt;
 class AdminController extends Controller
 {
     public function login(){
-        // echo Hash::make('raheem123');
-        // exit();
+        // Redirect to dashboard if already authenticated
+        if (Auth::check()) {
+            return redirect()->route('admin.dashboard');
+        }
+        
         return view('admin.login');
     }
     public function make_login(Request $request){
+        // Validate input
+        $request->validate([
+            'email' => 'required|email|max:255',
+            'password' => 'required|string|min:6|max:255',
+        ]);
 
-        $data = array(
+        // Rate limiting - prevent brute force attacks
+        $key = 'login_attempts_' . $request->ip();
+        $attempts = cache()->get($key, 0);
+        
+        if ($attempts >= 5) {
+            return back()->withErrors(['message' => 'Too many login attempts. Please try again in 15 minutes.']);
+        }
+
+        $credentials = [
             'email' => $request->email,
-            'password'=>$request->password,
-            'role'=>'admin'
-        );
-        Alert::success('Login Successfully','Welcome To DressWell');
-        // dd($data);
-        if (Auth::attempt($data)) {
-            return redirect()->route('admin.dashboard');
-        }else {
-            return back()->withErrors(['message'=>'Invalid Email & Password']);
+            'password' => $request->password,
+            'role' => 'admin'
+        ];
+
+        if (Auth::attempt($credentials, $request->filled('remember'))) {
+            // Clear failed attempts on successful login
+            cache()->forget($key);
+            
+            // Regenerate session to prevent session fixation
+            $request->session()->regenerate();
+            
+            Alert::success('Login Successfully', 'Welcome To DressWell');
+            return redirect()->intended(route('admin.dashboard'));
+        } else {
+            // Increment failed attempts
+            cache()->put($key, $attempts + 1, now()->addMinutes(15));
+            
+            return back()
+                ->withInput($request->only('email'))
+                ->withErrors(['message' => 'Invalid email or password. Please try again.']);
         }
     }
 
@@ -41,10 +68,14 @@ class AdminController extends Controller
     }
 
     public function logout(){
-
         Auth::logout();
+        
+        // Invalidate the session
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        
+        Alert::success('Logged out successfully', 'See you soon!');
         return redirect()->route('admin.login');
-
     }
 
     public function globalSearch(Request $request){
