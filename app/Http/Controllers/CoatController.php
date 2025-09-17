@@ -52,10 +52,13 @@ class CoatController extends Controller
         }
         
         if ($search !="") {
-            $coats =  Coat::where('coustmer_name','LIKE',"%$search%")->orwhere('coustmer_contact','LIKE',"%$search%")->orwhere('id','LIKE',"$search")->orderBy($orderBy, $orderDirection)->paginate();
+            $coats =  Coat::where('coustmer_name','LIKE',"%$search%")->orwhere('coustmer_contact','LIKE',"%$search%")->orwhere('id','LIKE',"$search")->orderBy($orderBy, $orderDirection)->paginate(10);
         }else {
             $coats = Coat::orderBy($orderBy, $orderDirection)->paginate(10);
         }
+        
+        // Append query parameters to pagination links
+        $coats->appends($request->query());
         
         return view('admin.coats.index',compact('coats','search','sort'));
     }

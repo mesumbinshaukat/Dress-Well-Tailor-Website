@@ -70,7 +70,7 @@
            <div class="border border-dark back6 my-2 mx-2" style="height: 480px">
             <h5 class="back5"></h5>
         <div>
-                <img class="back1 my-2" src="{{asset('admintheme/css/logo.png')}}" alt="">
+                <img class="back1 my-2" src="{{asset('assets/img/DWT-PROFILE-PIC-1.jpg')}}" alt="">
             </div>
             <div style="margin-top: -6%;">
                 <h1 class="h4 heade text-dark text-center"><i>Dress Well Tailors & Fabric</i> </h1>
@@ -87,7 +87,15 @@
                     <div> <span class="fw-bolder text-dark"><b>Order No:</b>{{$suit->id}}</span></div>
                 </div>
                 <div class="col-md-6">
-                    <div> <span class="fw-bolder text-dark"><b>Trail Date: </b>{{$suit->trail_date}}</span></div>
+                    <div> <span class="fw-bolder text-dark"><b>Booking Date:</b> {{ $suit->created_at ? $suit->created_at->format('d-m-Y') : 'N/A' }}</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div> <span class="fw-bolder text-dark"><b>Booking Time:</b> {{ $suit->created_at ? $suit->created_at->format('h:i A') : 'N/A' }}</span></div>
+                </div>
+                <div class="col-md-6">
+                    <div> <span class="fw-bolder text-dark"><b>Trial Date:</b> {{ $suit->trail_date ?? 'Not Set' }}</span></div>
                 </div>
             </div>
             <div class="row">
@@ -126,6 +134,12 @@
                 <div class="col-md-6">
                     <div> <span class="fw-bolder text-dark"><b>Quantity: </b>{{$suit->quantity}}</span> </div>
                 </div>
+                <div class="col-md-6">
+                    <div> <span class="fw-bolder text-dark"><b>Remaining Amount: </b>{{ $suit->total_amount - $suit->advance }}</span> </div>
+                </div>
+            </div>
+            <div class="customer-note text-center my-3 p-2 bg-light border">
+                <p class="text-danger h5 mb-0"><strong>Customer are advised to collect their order within 2 months positively.</strong></p>
             </div>
 
     </div>
@@ -241,9 +255,6 @@
     
                     </tbody>
                 </table>
-              </div>
-              <div class="customer-note text-center my-3 p-2 bg-light border">
-                <p class="text-danger h5 mb-0"><strong>Customer are advised to collect their order within 2 months positively.</strong></p>
               </div>
               <div class="row" style="margin-top: 2%;">
                 <div class="col-md-12 text-center py-2">

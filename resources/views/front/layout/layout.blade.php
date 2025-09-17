@@ -9,7 +9,7 @@
 	<!-- title -->
 	<title>Dress Well Tailors</title>
 	<!-- favicon -->
-	<link rel="icon" type="image/png" sizes="18x18" href="{{asset('admintheme/css/logo.png')}}">
+	<link rel="icon" type="image/png" sizes="18x18" href="{{asset('feb-Icon-2.png')}}">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">

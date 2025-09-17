@@ -8,7 +8,7 @@
     <!-- title -->
 	<title>DressWell Tailors</title>
 	<!-- favicon -->
-	<link rel="icon" type="image/png" sizes="18x18" href="{{asset('admintheme/css/logo.png')}}">
+	<link rel="icon" type="image/png" sizes="18x18" href="{{asset('feb-Icon-2.png')}}">
     <link href="{{asset('admintheme//css/style.css')}}" rel="stylesheet">
     <!---sweet alert----->
 

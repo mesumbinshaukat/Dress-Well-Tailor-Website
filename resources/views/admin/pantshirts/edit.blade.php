@@ -61,6 +61,10 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Collar Size (Optional)</label>
+                                    <input type="number" name="collar_size" value="{{$pantshirt->collar_size}}" placeholder="Enter Collar Size" class="form-control" step="0.1">
+                                </div>
+                                <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Chest</label>
                                     <input type="text" name="chest" value="{{$pantshirt->chest}}" placeholder="Enter Chest" class="form-control">
                                 </div>
@@ -89,6 +93,10 @@
                                             <option value="loose" {{$pantshirt->shirt_fitting == "loose" ? 'selected' : ''}}>Loose</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Shirt Fitting Size (Optional)</label>
+                                    <input type="number" name="shirt_fitting_size" value="{{$pantshirt->shirt_fitting_size}}" placeholder="Enter Shirt Fitting Size" class="form-control" step="0.1">
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Shoulder</label>
@@ -131,6 +139,10 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Pant Pocket Size (Optional)</label>
+                                    <input type="number" name="pant_pocket_size" value="{{$pantshirt->pant_pocket_size}}" placeholder="Enter Pant Pocket Size" class="form-control" step="0.1">
+                                </div>
+                                <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Pant Waist</label>
                                     <input type="text" name="pant_waist" value="{{$pantshirt->pant_waist}}" placeholder="Enter Pant Waist" class="form-control">
                                 </div>
@@ -146,32 +158,20 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Pant Fitting Measurement (Optional)</label>
+                                    <input type="number" name="pant_fitting_measurement" value="{{$pantshirt->pant_fitting_measurement}}" placeholder="Enter Pant Fitting Measurement" class="form-control" step="0.1">
+                                </div>
+                                <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Hip</label>
                                     <input type="text" name="hip" value="{{$pantshirt->hip}}" placeholder="Enter Hip" class="form-control">
                                 </div>
                                 <div class="mb-3 col-md-6">
-                                    <label class="font-weight-bold">Belt Loop</label>
-                                    <div class="form-group">
-                                        <select class="form-control" name="belt_loop">
-                                            <option value="" {{$pantshirt->belt_loop == "" ? 'selected' : ''}}></option>
-                                            <option value="no" {{$pantshirt->belt_loop == "no" ? 'selected' : ''}}>No</option>
-                                            <option value="yes" {{$pantshirt->belt_loop == "yes" ? 'selected' : ''}}>Yes</option>
-                                        </select>
-                                    </div>
+                                    <label class="font-weight-bold">Belt Loop (Number of Loops)</label>
+                                    <input type="number" name="belt_loop" value="{{$pantshirt->belt_loop}}" placeholder="Enter Number of Belt Loops" class="form-control" min="0">
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Thigh</label>
                                     <input type="text" name="thigh" value="{{$pantshirt->thigh}}" placeholder="Enter Thigh" class="form-control">
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label class="font-weight-bold">Zipper</label>
-                                    <div class="form-group">
-                                        <select class="form-control" name="zipper">
-                                            <option value="" {{$pantshirt->zipper == "" ? 'selected' : ''}}></option>
-                                            <option value="front" {{$pantshirt->zipper == "front" ? 'selected' : ''}}>Front</option>
-                                            <option value="side" {{$pantshirt->zipper == "side" ? 'selected' : ''}}>Side</option>
-                                        </select>
-                                    </div>
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Knee</label>

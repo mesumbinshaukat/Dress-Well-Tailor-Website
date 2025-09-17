@@ -60,6 +60,10 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Collar Size (Optional)</label>
+                                    <input type="number" name="collar_size" placeholder="Enter Collar Size" class="form-control" step="0.1">
+                                </div>
+                                <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Chest</label>
                                     <input type="text" name="chest" placeholder="Enter Chest" class="form-control">
                                 </div>
@@ -88,6 +92,10 @@
                                             <option value="loose">Loose</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Shirt Fitting Size (Optional)</label>
+                                    <input type="number" name="shirt_fitting_size" placeholder="Enter Shirt Fitting Size" class="form-control" step="0.1">
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Shoulder</label>
@@ -130,6 +138,10 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Pant Pocket Size (Optional)</label>
+                                    <input type="number" name="pant_pocket_size" placeholder="Enter Pant Pocket Size" class="form-control" step="0.1">
+                                </div>
+                                <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Pant Waist</label>
                                     <input type="text" name="pant_waist" placeholder="Enter Pant Waist" class="form-control">
                                 </div>
@@ -145,32 +157,20 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Pant Fitting Measurement (Optional)</label>
+                                    <input type="number" name="pant_fitting_measurement" placeholder="Enter Pant Fitting Measurement" class="form-control" step="0.1">
+                                </div>
+                                <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Hip</label>
                                     <input type="text" name="hip" placeholder="Enter Hip" class="form-control">
                                 </div>
                                 <div class="mb-3 col-md-6">
-                                    <label class="font-weight-bold">Belt Loop</label>
-                                    <div class="form-group">
-                                        <select class="form-control" name="belt_loop">
-                                            <option value=""></option>
-                                            <option value="no">No</option>
-                                            <option value="yes">Yes</option>
-                                        </select>
-                                    </div>
+                                    <label class="font-weight-bold">Belt Loop (Number of Loops)</label>
+                                    <input type="number" name="belt_loop" placeholder="Enter Number of Belt Loops" class="form-control" min="0">
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Thigh</label>
                                     <input type="text" name="thigh" placeholder="Enter Thigh" class="form-control">
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label class="font-weight-bold">Zipper</label>
-                                    <div class="form-group">
-                                        <select class="form-control" name="zipper">
-                                            <option value=""></option>
-                                            <option value="front">Front</option>
-                                            <option value="side">Side</option>
-                                        </select>
-                                    </div>
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Knee</label>

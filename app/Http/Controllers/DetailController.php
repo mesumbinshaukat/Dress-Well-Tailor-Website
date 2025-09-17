@@ -51,10 +51,13 @@ class DetailController extends Controller
         }
         
         if ($search !="") {
-            $details = Detail::where('coustmer_name','LIKE',"%$search%")->orwhere('coustmer_contact','LIKE',"%$search%")->orwhere('id','LIKE',"$search")->orderBy($orderBy, $orderDirection)->paginate();
+            $details = Detail::where('coustmer_name','LIKE',"%$search%")->orwhere('coustmer_contact','LIKE',"%$search%")->orwhere('id','LIKE',"$search")->orderBy($orderBy, $orderDirection)->paginate(10);
         }else {
             $details = Detail::orderBy($orderBy, $orderDirection)->paginate(10);
         }
+        
+        // Append query parameters to pagination links
+        $details->appends($request->query());
         
         return view('admin.details.index',compact('details','search','sort'));
     }

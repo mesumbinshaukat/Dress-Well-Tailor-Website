@@ -70,7 +70,7 @@
            <div class="border border-dark back6 my-2 mx-2" style="height: 480px">
             <h5 class="back5"></h5>
         <div>
-                <img class="back1 my-2" src="{{asset('admintheme/css/logo.png')}}" alt="">
+                <img class="back1 my-2" src="{{asset('assets/img/DWT-PROFILE-PIC-1.jpg')}}" alt="">
             </div>
             <div style="margin-top:-8%;">
                 <h1 class="fw-bold heade text-dark text-center"><i>Dress Well Tailors & Fabric</i> </h1>
@@ -85,6 +85,17 @@
             <div class="row ">
                 <div class="col-md-6">
                     <div> <span class="fw-bolder text-dark"><b>Order No:</b>{{$pantshirt->id}}</span></div>
+                </div>
+                <div class="col-md-6">
+                    <div> <span class="fw-bolder text-dark"><b>Booking Date:</b> {{ $pantshirt->created_at ? $pantshirt->created_at->format('d-m-Y') : 'N/A' }}</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div> <span class="fw-bolder text-dark"><b>Booking Time:</b> {{ $pantshirt->created_at ? $pantshirt->created_at->format('h:i A') : 'N/A' }}</span></div>
+                </div>
+                <div class="col-md-6">
+                    <div> <span class="fw-bolder text-dark"><b>Trial Date:</b> {{ $pantshirt->trail_date ?? 'Not Set' }}</span></div>
                 </div>
             </div>
             <div class="row">
@@ -127,6 +138,9 @@
                 <div class="col-md-6">
                     <div> <span class="fw-bolder text-dark"><b>Working Branch: </b>Gulistan-e-Johar</span> </div>
                 </div>
+            </div>
+            <div class="customer-note text-center my-3 p-2 bg-light border">
+                <p class="text-danger h5 mb-0"><strong>Customer are advised to collect their order within 2 months positively.</strong></p>
             </div>
     </div>
 </div>
@@ -205,8 +219,14 @@
                             <td class="text-dark h5"><b>Pant Fitting:</b></b> <span class="pl-4"></span> {{$pantshirt->pant_fitting}}</span></td>
 
 
-
                         </tr>
+                        @if($pantshirt->collar_size)
+                        <tr>
+                            <td></td>
+                            <td class="text-dark h5"><b>Collar Size:</b> <span class="pl-4"></span> {{$pantshirt->collar_size}}</span></td>
+                            <td></td>
+                        </tr>
+                        @endif
                         <tr>
                             <td></td>
                             <td class="text-dark h5"><b>Cuff:</b> <span class="pl-4"></span> {{$pantshirt->cuff}}</span></td>
@@ -216,7 +236,7 @@
                         <tr>
                             <td></td>
                             <td class="text-dark h5"><b>Shirt Pocket:</b> <span class="pl-4"></span> {{$pantshirt->shirt_pocket}}</span></td>
-                            <td class="text-dark h5"><b>Zipper:</b> <span class="pl-4"></span> {{$pantshirt->zipper}}</span></td>
+                            <td></td>
                             
                         </tr>
                         <tr>
@@ -225,12 +245,30 @@
                             <td></td>
                             
                         </tr>
+                        @if($pantshirt->shirt_fitting_size)
+                        <tr>
+                            <td></td>
+                            <td class="text-dark h5"><b>Shirt Fitting Size:</b> <span class="pl-4"></span> {{$pantshirt->shirt_fitting_size}}</span></td>
+                            <td></td>
+                        </tr>
+                        @endif
+                        @if($pantshirt->pant_pocket_size)
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="text-dark h5"><b>Pant Pocket Size:</b> <span class="pl-4"></span> {{$pantshirt->pant_pocket_size}}</span></td>
+                        </tr>
+                        @endif
+                        @if($pantshirt->pant_fitting_measurement)
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="text-dark h5"><b>Pant Fitting Measurement:</b> <span class="pl-4"></span> {{$pantshirt->pant_fitting_measurement}}</span></td>
+                        </tr>
+                        @endif
     
                     </tbody>
                 </table>
-              </div>
-              <div class="customer-note text-center my-3 p-2 bg-light border">
-                <p class="text-danger h5 mb-0"><strong>Customer are advised to collect their order within 2 months positively.</strong></p>
               </div>
               <div class="row" style="margin-top: 2%;">
                 <div class="col-md-12 text-center py-2">

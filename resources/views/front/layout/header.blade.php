@@ -6,8 +6,7 @@
                     <!-- logo -->
                     <div class="site-logo">
                         <a href="{{route('home')}}">
-                            {{-- <img src="{{asset('assets/img/logo.png')}}" alt=""> --}}
-                            <p class="h2 font-weight-italic" style="color: #000000">Dress Well<span class="h2" style="color: #D47525">Tailors</span></p>
+                            <img src="{{asset('assets/img/DWT-PROFILE-PIC-1.jpg')}}" alt="Dress Well Tailors" style="height: 60px; width: auto;">
                         </a>
                     </div>
                     <!-- logo -->

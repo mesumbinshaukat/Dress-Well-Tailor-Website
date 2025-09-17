@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>DressWell Tailors</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admintheme/css/logo.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('feb-Icon-2.png')}}">
     <link rel="stylesheet" href="{{asset('admintheme/vendor/owl-carousel/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('admintheme/vendor/owl-carousel/css/owl.theme.default.min.css')}}">
     <link href="{{asset('admintheme/vendor/jqvmap/css/jqvmap.min.css')}}" rel="stylesheet">
@@ -45,7 +45,7 @@
         ***********************************-->
         {{-- <div class="nav-header">
                       <a href="{{route('admin.dashboard')}}" class="brand-logo">
-                <img class="logo-abbr" src="{{asset('admintheme/css/logo.png')}}" alt="">
+                <img class="logo-abbr" src="{{asset('assets/img/DWT-PROFILE-PIC-1.jpg')}}" alt="">
                 <img class="logo-compact" src="{{asset('admintheme/images/text.png')}}" alt="">
                 <img class="brand-title" src="{{asset('admintheme/images/text.png')}}" alt="">
             </a>

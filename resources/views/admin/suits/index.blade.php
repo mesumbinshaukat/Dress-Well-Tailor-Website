@@ -16,12 +16,13 @@
             
             <form action="" class="col-8 d-flex">
                 <div class="form-group input-group mr-2" style="flex: 2;">
-                    <input type="search" class="form-control" id="suitsSearchInput" name="search" placeholder="Search by Name" value="{{$search}}"> 
-                    <div class="input-group-prepend" >
-                    <a href="{{route('suits.index')}}">
-                        <button class="btn btn-primary input-group-text ml-1" type="button">Reset</button>
-                    </a>
-                </div>
+                    <input type="search" class="form-control" name="search" placeholder="Search by Name" value="{{$search}}"> 
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </div>
+                    <div class="input-group-append ml-1">
+                        <a href="{{route('suits.index')}}" class="btn btn-secondary">Reset</a>
+                    </div>
                 </div>
                 <div class="form-group" style="flex: 1;">
                     <select class="form-control" name="sort" id="sortSelect" onchange="this.form.submit()">
@@ -144,7 +145,7 @@
 
                     </div>
                     <div class="row" style="margin-top: 2%;margin-left: 2%">
-                        {{ $suits->links() }}
+                        {{ $suits->appends(request()->query())->links() }}
                     </div>
                 </div>
             </div>
@@ -152,22 +153,5 @@
     </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('suitsSearchInput');
-    let searchTimeout;
-
-    searchInput.addEventListener('input', function() {
-        const query = this.value.trim();
-        
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(() => {
-            if (query.length >= 1) {
-                window.location.href = '{{route("suits.index")}}?search=' + encodeURIComponent(query);
-            }
-        }, 500);
-    });
-});
-</script>
 
 @endsection

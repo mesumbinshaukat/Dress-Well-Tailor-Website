@@ -51,10 +51,13 @@ class PantShirtController extends Controller
         }
         
         if ($search !="") {
-            $pantShirts = PantShirt::where('coustmer_name','LIKE',"%$search%")->orwhere('coustmer_contact','LIKE',"%$search%")->orwhere('id','LIKE',"$search")->orderBy($orderBy, $orderDirection)->paginate();
+            $pantShirts = PantShirt::where('coustmer_name','LIKE',"%$search%")->orwhere('coustmer_contact','LIKE',"%$search%")->orwhere('id','LIKE',"$search")->orderBy($orderBy, $orderDirection)->paginate(10);
         }else {
             $pantShirts = PantShirt::orderBy($orderBy, $orderDirection)->paginate(10);
         }
+        
+        // Append query parameters to pagination links
+        $pantShirts->appends($request->query());
         
         return view('admin.pantshirts.index',compact('pantShirts','search','sort'));
     }
@@ -92,9 +95,11 @@ class PantShirtController extends Controller
             $pantShirt->arm = $request->arm;
             $pantShirt->neck = $request->neck;
             $pantShirt->collar = $request->collar;
+            $pantShirt->collar_size = $request->collar_size;
             $pantShirt->cuff = $request->cuff;
             $pantShirt->shirt_pocket = $request->shirt_pocket;
             $pantShirt->shirt_fitting = $request->shirt_fitting;
+            $pantShirt->shirt_fitting_size = $request->shirt_fitting_size;
             // Pant measurements
             $pantShirt->pant_length = $request->pant_length;
             $pantShirt->pant_waist = $request->pant_waist;
@@ -103,9 +108,10 @@ class PantShirtController extends Controller
             $pantShirt->knee = $request->knee;
             $pantShirt->bottom = $request->bottom;
             $pantShirt->pant_pocket = $request->pant_pocket;
+            $pantShirt->pant_pocket_size = $request->pant_pocket_size;
             $pantShirt->pant_fitting = $request->pant_fitting;
+            $pantShirt->pant_fitting_measurement = $request->pant_fitting_measurement;
             $pantShirt->belt_loop = $request->belt_loop;
-            $pantShirt->zipper = $request->zipper;
             // Common fields
             $pantShirt->textarea = $request->textarea;
             $pantShirt->trail_date = $request->trail_date;

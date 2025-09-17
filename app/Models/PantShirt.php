@@ -23,9 +23,11 @@ class PantShirt extends Model
         'arm',
         'neck',
         'collar',
+        'collar_size',
         'cuff',
         'shirt_pocket',
         'shirt_fitting',
+        'shirt_fitting_size',
         // Pant measurements
         'pant_length',
         'pant_waist',
@@ -34,9 +36,10 @@ class PantShirt extends Model
         'knee',
         'bottom',
         'pant_pocket',
+        'pant_pocket_size',
         'pant_fitting',
+        'pant_fitting_measurement',
         'belt_loop',
-        'zipper',
         // Common fields
         'textarea',
         'trail_date',

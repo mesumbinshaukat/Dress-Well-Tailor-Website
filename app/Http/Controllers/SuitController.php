@@ -51,10 +51,13 @@ class SuitController extends Controller
         }
         
         if ($search !="") {
-            $suits =  Suit::where('coustmer_name','LIKE',"%$search%")->orwhere('coustmer_contact','LIKE',"%$search%")->orwhere('id','LIKE',"$search")->orderBy($orderBy, $orderDirection)->paginate();
+            $suits =  Suit::where('coustmer_name','LIKE',"%$search%")->orwhere('coustmer_contact','LIKE',"%$search%")->orwhere('id','LIKE',"$search")->orderBy($orderBy, $orderDirection)->paginate(10);
         }else {
             $suits = Suit::orderBy($orderBy, $orderDirection)->paginate(10);
         }
+        
+        // Append query parameters to pagination links
+        $suits->appends($request->query());
         
         return view('admin.suits.index',compact('suits','search','sort'));
     }
