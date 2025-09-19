@@ -22,6 +22,12 @@ Route::resource('suits',App\Http\Controllers\SuitController::class);
 Route::resource('coats',App\Http\Controllers\CoatController::class);
 Route::resource('pantshirts',App\Http\Controllers\PantShirtController::class);
 
+// Print routes
+Route::get('details/{detail}/print', [App\Http\Controllers\DetailController::class, 'print'])->name('details.print');
+Route::get('suits/{suit}/print', [App\Http\Controllers\SuitController::class, 'print'])->name('suits.print');
+Route::get('coats/{coat}/print', [App\Http\Controllers\CoatController::class, 'print'])->name('coats.print');
+Route::get('pantshirts/{pantShirt}/print', [App\Http\Controllers\PantShirtController::class, 'print'])->name('pantshirts.print');
+
 Route::get('/', function () {
     return view('welcome');
 });

@@ -99,10 +99,13 @@ class CoatController extends Controller
             $datel->Kuffs = $request->Kuffs;
             $datel->kuff = $request->kuff;
             $datel->collar = $request->collar;
+            $datel->collar_size = $request->collar_size;
             $datel->patti = $request->patti;
             $datel->daman = $request->daman;
             $datel->pocket = $request->pocket;
             $datel->shirt_pocket = $request->shirt_pocket;
+            $datel->shirt_fitting = $request->shirt_fitting;
+            $datel->shirt_fitting_size = $request->shirt_fitting_size;
             $datel->coat_length = $request->coat_length;
             $datel->coat_chest = $request->coat_chest;
             $datel->coat_waist = $request->coat_waist;
@@ -183,5 +186,16 @@ class CoatController extends Controller
     {
         $coat->delete();
         return redirect()->back()->with('message','Student Deleted Successfully');
+    }
+
+    /**
+     * Display the print view for the specified resource.
+     *
+     * @param  \App\Models\Coat  $coat
+     * @return \Illuminate\Http\Response
+     */
+    public function print(Coat $coat)
+    {
+        return view('admin.coats.print', compact('coat'));
     }
 }

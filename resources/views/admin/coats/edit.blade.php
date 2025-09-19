@@ -50,13 +50,21 @@
                                 <div class="mb-3 col-md-6">
                                     <label class="font-weight-bold">Collar</label>
                                     <div class="form-group">
-                                        <select class="form-control" name="collar" >
+                                        <select class="form-control" name="collar">
                                             <option value="" {{$coat->collar == "" ? 'selected' : ''}}></option>
-                                            <option value="nothing" {{$coat->collar == "nothing" ? 'selected' : ''}}>nothing</option>
-                                            <option value="shirt_collar" {{$coat->collar == "shirt_collar" ? 'selected' : ''}}>shirt_collar</option>
-                                            <option value="sherwani_collar" {{$coat->collar == "sherwani_collar" ? 'selected' : ''}}>sherwani_collar</option>
+                                            <option value="regular" {{$coat->collar == "regular" ? 'selected' : ''}}>Regular</option>
+                                            <option value="button_down" {{$coat->collar == "button_down" ? 'selected' : ''}}>Button Down</option>
+                                            <option value="spread" {{$coat->collar == "spread" ? 'selected' : ''}}>Spread</option>
+                                            <option value="cutaway" {{$coat->collar == "cutaway" ? 'selected' : ''}}>Cutaway</option>
+                                            <option value="nothing" {{$coat->collar == "nothing" ? 'selected' : ''}}>Nothing</option>
+                                            <option value="shirt_collar" {{$coat->collar == "shirt_collar" ? 'selected' : ''}}>Shirt Collar</option>
+                                            <option value="sherwani_collar" {{$coat->collar == "sherwani_collar" ? 'selected' : ''}}>Sherwani Collar</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Collar Size (Optional)</label>
+                                    <input type="number" name="collar_size" value="{{$coat->collar_size}}" placeholder="Enter Collar Size" class="form-control" step="0.1">
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Chest</label>
@@ -125,27 +133,47 @@
                                     <label class="font-weight-bold">Neck</label>
                                     <input type="text" name="neck" value="{{$coat->neck}}" placeholder="Enter neck" class="form-control">
                                 </div>
-                                <div class="mb-3">
+                                <div class="form-row">
+                                <div class="mb-3 col-md-6">
                                     <label class="font-weight-bold">Shirt Pocket</label>
                                     <div class="form-group">
-                                    <select class="form-control" name="shirt_pocket">
-                                            <option value=""{{$coat->shirt_pocket == "" ? 'selected' : ''}}></option>
-                                            <option value="nothing"{{$coat->shirt_pocket == "nothing" ? 'selected' : ''}}>nothing</option>
-                                            <option value="simple"{{$coat->shirt_pocket == "simple" ? 'selected' : ''}}>simple</option>
-                                            <option value="flape"{{$coat->shirt_pocket == "flape" ? 'selected' : ''}}>flape</option>
+                                        <select class="form-control" name="shirt_pocket">
+                                            <option value="" {{$coat->shirt_pocket == "" ? 'selected' : ''}}></option>
+                                            <option value="no" {{$coat->shirt_pocket == "no" ? 'selected' : ''}}>No</option>
+                                            <option value="1" {{$coat->shirt_pocket == "1" ? 'selected' : ''}}>1</option>
+                                            <option value="2" {{$coat->shirt_pocket == "2" ? 'selected' : ''}}>2</option>
+                                            <option value="nothing" {{$coat->shirt_pocket == "nothing" ? 'selected' : ''}}>Nothing</option>
+                                            <option value="simple" {{$coat->shirt_pocket == "simple" ? 'selected' : ''}}>Simple</option>
+                                            <option value="flape" {{$coat->shirt_pocket == "flape" ? 'selected' : ''}}>Flape</option>
                                         </select>
-                                        </div>
+                                    </div>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3 col-md-6">
+                                    <label class="font-weight-bold">Shirt Fitting</label>
+                                    <div class="form-group">
+                                        <select class="form-control" name="shirt_fitting">
+                                            <option value="" {{$coat->shirt_fitting == "" ? 'selected' : ''}}></option>
+                                            <option value="slim" {{$coat->shirt_fitting == "slim" ? 'selected' : ''}}>Slim</option>
+                                            <option value="regular" {{$coat->shirt_fitting == "regular" ? 'selected' : ''}}>Regular</option>
+                                            <option value="loose" {{$coat->shirt_fitting == "loose" ? 'selected' : ''}}>Loose</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Shirt Fitting Size (Optional)</label>
+                                    <input type="number" name="shirt_fitting_size" value="{{$coat->shirt_fitting_size}}" placeholder="Enter Shirt Fitting Size" class="form-control" step="0.1">
+                                </div>
+                                <div class="mb-3 col-md-6">
                                     <label class="font-weight-bold">Pocket</label>
                                     <div class="form-group">
-                                    <select class="form-control" name="pocket">
-                                            <option value=""{{$coat->pocket == "" ? 'selected' : ''}}></option>
-                                            <option value="nothing"{{$coat->pocket == "nothing" ? 'selected' : ''}}>nothing</option>
-                                            <option value="1"{{$coat->pocket == "1" ? 'selected' : ''}}>1</option>
-                                            <option value="2"{{$coat->pocket == "2" ? 'selected' : ''}}>2</option>
+                                        <select class="form-control" name="pocket">
+                                            <option value="" {{$coat->pocket == "" ? 'selected' : ''}}></option>
+                                            <option value="nothing" {{$coat->pocket == "nothing" ? 'selected' : ''}}>Nothing</option>
+                                            <option value="1" {{$coat->pocket == "1" ? 'selected' : ''}}>1</option>
+                                            <option value="2" {{$coat->pocket == "2" ? 'selected' : ''}}>2</option>
                                         </select>
-                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                                 <!-----------kjcgcijsdcijsdhc------->
                                 <!-- {{-- <div class="mb-3">

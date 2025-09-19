@@ -17,8 +17,15 @@
 
             
             <form action="" class="col-8 d-flex">
+                <div class="form-group mr-2" style="flex: 1;">
+                    <select class="form-control" name="search_type">
+                        <option value="default" {{ request('search_type', 'default') == 'default' ? 'selected' : '' }}>Default (Name & Order)</option>
+                        <option value="contact" {{ request('search_type') == 'contact' ? 'selected' : '' }}>Contact Number</option>
+                        <option value="amount" {{ request('search_type') == 'amount' ? 'selected' : '' }}>Total Amount</option>
+                    </select>
+                </div>
                 <div class="form-group input-group mr-2" style="flex: 2;">
-                    <input type="search" class="form-control" name="search" placeholder="Search by Name" value="{{$search}}"> 
+                    <input type="search" class="form-control" name="search" placeholder="Search..." value="{{$search}}"> 
                     <div class="input-group-append">
                         <button class="btn btn-success" type="submit">Search</button>
                     </div>

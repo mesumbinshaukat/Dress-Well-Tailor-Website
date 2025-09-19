@@ -177,4 +177,15 @@ class PantShirtController extends Controller
         $pantshirt->delete();
         return redirect()->back()->with('message','Data Deleted Successfully');
     }
+
+    /**
+     * Display the print view for the specified resource.
+     *
+     * @param  \App\Models\PantShirt  $pantShirt
+     * @return \Illuminate\Http\Response
+     */
+    public function print(PantShirt $pantShirt)
+    {
+        return view('admin.pantshirts.print', compact('pantShirt'));
+    }
 }

@@ -16,8 +16,11 @@ class DetailController extends Controller
      */
     public function index(Request $request)
     {
-        Alert::success('Data Inserted Successfully');
+        if(session('success')) {
+            Alert::success('Success!', session('success'));
+        }
         $search = $request['search'] ?? "";
+        $search_type = $request['search_type'] ?? "default";
         $sort = $request['sort'] ?? "newest";
         
         // Determine sorting
@@ -51,7 +54,22 @@ class DetailController extends Controller
         }
         
         if ($search !="") {
-            $details = Detail::where('coustmer_name','LIKE',"%$search%")->orwhere('coustmer_contact','LIKE',"%$search%")->orwhere('id','LIKE',"$search")->orderBy($orderBy, $orderDirection)->paginate(10);
+            $query = Detail::query();
+            
+            switch ($search_type) {
+                case 'contact':
+                    $query->where('coustmer_contact', 'LIKE', "%$search%");
+                    break;
+                case 'amount':
+                    $query->where('total_amount', 'LIKE', "%$search%");
+                    break;
+                default: // default - search by name and order number only
+                    $query->where('coustmer_name', 'LIKE', "%$search%")
+                          ->orWhere('id', 'LIKE', "$search");
+                    break;
+            }
+            
+            $details = $query->orderBy($orderBy, $orderDirection)->paginate(10);
         }else {
             $details = Detail::orderBy($orderBy, $orderDirection)->paginate(10);
         }
@@ -59,7 +77,7 @@ class DetailController extends Controller
         // Append query parameters to pagination links
         $details->appends($request->query());
         
-        return view('admin.details.index',compact('details','search','sort'));
+        return view('admin.details.index',compact('details','search','search_type','sort'));
     }
 
     /**
@@ -122,7 +140,7 @@ class DetailController extends Controller
             $datel->save();
             // Detail::create($data);
 
-            return redirect('/details')->with('message','Data Added Successfully');
+            return redirect('/details')->with('success','Customer record has been successfully created! Order #' . $datel->id);
         } catch (\Exception $ex) {
             return redirect('/details')->with('message','Something Went Wrong'.$ex);
         }
@@ -178,6 +196,17 @@ class DetailController extends Controller
     public function destroy(Detail $detail)
     {
         $detail->delete();
-        return redirect()->back()->with('message','Data Deleted Successfully');
+        return redirect()->back()->with('message','Student Deleted Successfully');
+    }
+
+    /**
+     * Display the print view for the specified resource.
+     *
+     * @param  \App\Models\Detail  $detail
+     * @return \Illuminate\Http\Response
+     */
+    public function print(Detail $detail)
+    {
+        return view('admin.details.print', compact('detail'));
     }
 }

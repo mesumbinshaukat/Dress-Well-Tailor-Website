@@ -16,8 +16,11 @@ class SuitController extends Controller
      */
     public function index(Request $request)
     {
-        Alert::success('Data Inserted Successfully');
+        if(session('success')) {
+            Alert::success('Success!', session('success'));
+        }
         $search = $request['search'] ?? "";
+        $search_type = $request['search_type'] ?? "default";
         $sort = $request['sort'] ?? "newest";
         
         // Determine sorting
@@ -51,7 +54,22 @@ class SuitController extends Controller
         }
         
         if ($search !="") {
-            $suits =  Suit::where('coustmer_name','LIKE',"%$search%")->orwhere('coustmer_contact','LIKE',"%$search%")->orwhere('id','LIKE',"$search")->orderBy($orderBy, $orderDirection)->paginate(10);
+            $query = Suit::query();
+            
+            switch ($search_type) {
+                case 'contact':
+                    $query->where('coustmer_contact', 'LIKE', "%$search%");
+                    break;
+                case 'amount':
+                    $query->where('total_amount', 'LIKE', "%$search%");
+                    break;
+                default: // default - search by name and order number only
+                    $query->where('coustmer_name', 'LIKE', "%$search%")
+                          ->orWhere('id', 'LIKE', "$search");
+                    break;
+            }
+            
+            $suits = $query->orderBy($orderBy, $orderDirection)->paginate(10);
         }else {
             $suits = Suit::orderBy($orderBy, $orderDirection)->paginate(10);
         }
@@ -59,7 +77,7 @@ class SuitController extends Controller
         // Append query parameters to pagination links
         $suits->appends($request->query());
         
-        return view('admin.suits.index',compact('suits','search','sort'));
+        return view('admin.suits.index',compact('suits','search','search_type','sort'));
     }
 
     /**
@@ -180,5 +198,16 @@ class SuitController extends Controller
     {
         $suit->delete();
         return redirect()->back()->with('message','Student Deleted Successfully');
+    }
+
+    /**
+     * Display the print view for the specified resource.
+     *
+     * @param  \App\Models\Suit  $suit
+     * @return \Illuminate\Http\Response
+     */
+    public function print(Suit $suit)
+    {
+        return view('admin.suits.print', compact('suit'));
     }
 }

@@ -1,6 +1,12 @@
 @extends('admin.dash2')
 
 @section('content')
+    <!-- Print Button - Top Right -->
+    <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        <a href="{{route('details.print', $detail->id)}}" target="_blank" class="btn btn-primary btn-lg shadow-lg" id="printBtn">
+            <i class="fas fa-print"></i> Print Receipt
+        </a>
+    </div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,53 +20,89 @@
 <link rel="stylesheet" href="{{asset('admintheme/css/index.css')}}">
     <style>
         @media print {
-            body { 
-                margin: 0 !important; 
-                padding: 0 !important;
-                font-size: 12px !important;
-            }
-            .maindiv {
-                margin: 0 !important;
-                padding: 10px !important;
-                margin-bottom: 0 !important;
-            }
-            .border {
-                border: 2px solid #000 !important;
-                height: auto !important;
-            }
             .table {
-                font-size: 11px !important;
-                margin: 0 !important;
+                font-size: 17px !important;
             }
             .table th, .table td {
-                padding: 4px !important;
-                border: 1px solid #000 !important;
-            }
-            .h4, .h5 {
-                font-size: 12px !important;
-                margin: 2px 0 !important;
-            }
-            .text-center {
-                text-align: center !important;
-            }
-            .row {
-                margin: 2px 0 !important;
-            }
-            .col-md-6 {
-                width: 50% !important;
-                float: left !important;
-            }
-            .col-md-12 {
-                width: 100% !important;
+                font-size: 17px !important;
             }
             .customer-note {
                 background: #f8f9fa !important;
-                border: 1px solid #000 !important;
-                padding: 8px !important;
-                margin: 10px 0 !important;
+                border: 2px solid #000 !important;
+                padding: 15px !important;
+                margin: 20px 0 !important;
                 font-weight: bold !important;
                 text-align: center !important;
+                font-size: 16px !important;
+                display: block !important;
+                clear: both !important;
+                page-break-inside: avoid !important;
             }
+            /* Fix first section layout */
+            .row {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                margin: 5px 0 !important;
+            }
+            .col-md-6 {
+                width: 48% !important;
+                float: left !important;
+                margin: 1% !important;
+                display: inline-block !important;
+                box-sizing: border-box !important;
+            }
+            .border {
+                padding: 15px !important;
+                margin-bottom: 30px !important;
+                page-break-inside: avoid !important;
+            }
+            /* Ensure proper spacing between sections */
+            .back {
+                margin-top: 50px !important;
+                clear: both !important;
+                page-break-before: avoid !important;
+            }
+            /* Enhanced watermark */
+            .maindiv {
+                position: relative !important;
+            }
+            /* Watermark logo for print */
+            .maindiv::before {
+                content: '' !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                background-image: url('{{asset('assets/img/DWT-PROFILE-PIC-1.jpg')}}') !important;
+                background-repeat: no-repeat !important;
+                background-position: center center !important;
+                background-size: 300px 300px !important;
+                opacity: 0.1 !important;
+                z-index: -1 !important;
+                pointer-events: none !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+        /* Watermark for web view */
+        .maindiv {
+            position: relative;
+        }
+        .maindiv::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('{{asset('assets/img/DWT-PROFILE-PIC-1.jpg')}}');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 250px 250px;
+            opacity: 0.05;
+            z-index: -1;
+            pointer-events: none;
         }
     </style>
     <title>slip</title>
@@ -72,9 +114,9 @@
         <div>
                 <img class="back1 my-2" src="{{asset('assets/img/DWT-PROFILE-PIC-1.jpg')}}" alt="">
             </div>
-            <div style="margin-top:-8%;">
-                <h1 class="fw-bold heade text-dark text-center"><i>Dress Well Tailors & Fabric</i> </h1>
-                <p class="h4 text-danger text-center"><i>Specialist in Coat, Pant, Sherwani & Shalwar Kameez</i> </p>
+            <div style="margin-top: -6%;">
+                <h1 class="h4 text-dark text-center" style="font-family: Arial, sans-serif; font-style: normal;">Dress Well Tailors & Fabric</h1>
+                <p class="h4 text-dark text-center"><i>Specialist in Coat, Pant, Sherwani & Shalwar Kameez</i> </p>
                     <p class="h4 text-primary text-center"><i>Shop No: G-101, G-57, Gulistan-e-Johar Harmain Tower & Shopping Mall</i> </p>
                     <p class="h4 text-dark text-center"><i>Contact: S.M Abdul Raheem - <i class="fa-brands fa-whatsapp text-success"></i> 0345-3319764  </i> </p>
                 
@@ -92,7 +134,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <div> <span class="fw-bolder text-dark"><b>Booking Time:</b> {{ $detail->created_at ? $detail->created_at->format('h:i A') : 'N/A' }}</span></div>
+                    <div> <span class="fw-bolder text-dark"><b>Booking Time:</b> {{ $detail->created_at ? $detail->created_at->setTimezone('Asia/Karachi')->format('h:i A') : 'N/A' }}</span></div>
                 </div>
                 <div class="col-md-6">
                     <div> <span class="fw-bolder text-dark"><b>Trial Date:</b> {{ $detail->trail_date ?? 'Not Set' }}</span></div>
@@ -274,6 +316,7 @@
                     </tbody>
                 </table>
               </div>
+              
               <div class="row" style="margin-top: 2%;">
                 <div class="col-md-12 text-center py-2">
                     <p class="text-danger h4"><i>Specialist in Coat, Pant, Sherwani & Shalwar Kameez</i> </p>
@@ -283,6 +326,30 @@
             </div>
     </div>
     </div>
+
+    <!-- JavaScript to intercept print commands -->
+    <script>
+        // Intercept Ctrl+P
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                document.getElementById('printBtn').click();
+                return false;
+            }
+        });
+
+        // Intercept browser print from right-click menu or File menu
+        window.addEventListener('beforeprint', function(e) {
+            e.preventDefault();
+            document.getElementById('printBtn').click();
+            return false;
+        });
+
+        // Override window.print()
+        window.print = function() {
+            document.getElementById('printBtn').click();
+        };
+    </script>
 </body>
 </html>
 

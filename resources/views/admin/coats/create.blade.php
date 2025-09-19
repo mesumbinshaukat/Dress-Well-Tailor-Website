@@ -51,11 +51,19 @@
                                     <div class="form-group">
                                         <select class="form-control" name="collar">
                                             <option value=""></option>
-                                            <option value="Nothing">Nothing</option>
-                                            <option value="Shirt_Collar">Shirt_Collar</option>
-                                            <option value="Sherwani_Collar">Sherwani_Collar</option>
+                                            <option value="regular">Regular</option>
+                                            <option value="button_down">Button Down</option>
+                                            <option value="spread">Spread</option>
+                                            <option value="cutaway">Cutaway</option>
+                                            <option value="nothing">Nothing</option>
+                                            <option value="shirt_collar">Shirt Collar</option>
+                                            <option value="sherwani_collar">Sherwani Collar</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Collar Size (Optional)</label>
+                                    <input type="number" name="collar_size" placeholder="Enter Collar Size" class="form-control" step="0.1">
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
                                     <label class="font-weight-bold">Chest</label>
@@ -125,27 +133,47 @@
                                     <input type="text" name="neck" placeholder="Enter neck" class="form-control">
                                 </div>
                                 
-                                <div class="mb-3">
+                                <div class="form-row">
+                                <div class="mb-3 col-md-6">
                                     <label class="font-weight-bold">Shirt Pocket</label>
                                     <div class="form-group">
-                                    <select class="form-control" name="shirt_pocket">
+                                        <select class="form-control" name="shirt_pocket">
                                             <option value=""></option>
-                                            <option value="nothing">nothing</option>
-                                            <option value="simple">simple</option>
-                                            <option value="flape">flape</option>
+                                            <option value="no">No</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="nothing">Nothing</option>
+                                            <option value="simple">Simple</option>
+                                            <option value="flape">Flape</option>
                                         </select>
-                                        </div>
+                                    </div>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3 col-md-6">
+                                    <label class="font-weight-bold">Shirt Fitting</label>
+                                    <div class="form-group">
+                                        <select class="form-control" name="shirt_fitting">
+                                            <option value=""></option>
+                                            <option value="slim">Slim</option>
+                                            <option value="regular">Regular</option>
+                                            <option value="loose">Loose</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Shirt Fitting Size (Optional)</label>
+                                    <input type="number" name="shirt_fitting_size" placeholder="Enter Shirt Fitting Size" class="form-control" step="0.1">
+                                </div>
+                                <div class="mb-3 col-md-6">
                                     <label class="font-weight-bold">Pocket</label>
                                     <div class="form-group">
-                                    <select class="form-control" name="pocket">
+                                        <select class="form-control" name="pocket">
                                             <option value=""></option>
-                                            <option value="nothing">nothing</option>
+                                            <option value="nothing">Nothing</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                         </select>
-                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                                 <!-----------kjcgcijsdcijsdhc------->
                                 <!-- {{-- <div class="mb-3">
