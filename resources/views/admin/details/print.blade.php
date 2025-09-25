@@ -402,7 +402,7 @@
                         <td><b>Name:</b> <span style="float: right; margin-right: 5px;">{{$detail->coustmer_name}}</span></td>
                         <td><b>Length:</b> <span style="float: right; margin-right: 5px;">{{$detail->length ?? 'N/A'}}</span></td>
                         <td><b>Length:</b> <span style="float: right; margin-right: 5px;">{{$detail->shalwar_length ?? 'N/A'}}</span></td>
-                        <td rowspan="16">@if($detail->textarea)<b>Special Instructions:</b><br>{{$detail->textarea}}@endif</td>
+                        <td rowspan="16">@if($detail->textarea)<b></b><br>{{$detail->textarea}}@endif</td>
                     </tr>
                     <tr>
                         <td><b>Order No.:</b> <span style="float: right; margin-right: 5px;">{{$detail->id}}</span></td>
@@ -441,7 +441,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><b>Collar:</b> <span style="float: right; margin-right: 5px;">{{$detail->collar ?? 'N/A'}}</span></td>
+                        <td><b>Collar Size:</b> <span style="float: right; margin-right: 5px;">{{$detail->collar_size ?? 'N/A'}}</span></td>
                         <td></td>
                     </tr>
                     <tr>

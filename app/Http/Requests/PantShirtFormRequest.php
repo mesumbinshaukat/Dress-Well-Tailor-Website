@@ -113,7 +113,7 @@ class PantShirtFormRequest extends FormRequest
                 
             ],
             "coustmer_contact"=>[
-                'digits:11',
+                
             ],
             "coustmer_address"=>[
                 

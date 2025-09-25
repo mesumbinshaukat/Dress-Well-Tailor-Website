@@ -416,7 +416,7 @@
                         <td><b>Name:</b> {{$pantShirt->coustmer_name}}</td>
                         <td><b>Shirt Length:</b> {{$pantShirt->shirt_length ?? 'N/A'}}</td>
                         <td><b>Pant Length:</b> {{$pantShirt->pant_length ?? 'N/A'}}</td>
-                        <td rowspan="16">@if($pantShirt->textarea)<b>Special Instructions:</b><br>{{$pantShirt->textarea}}@endif</td>
+                        <td rowspan="16">@if($pantShirt->textarea)<b></b><br>{{$pantShirt->textarea}}@endif</td>
                     </tr>
                     <tr>
                         <td><b>Order No.:</b> {{$pantShirt->id}}</td>

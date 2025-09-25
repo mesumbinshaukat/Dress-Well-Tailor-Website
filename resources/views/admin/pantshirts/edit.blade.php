@@ -204,7 +204,7 @@
                                 <h2 class="text-primary"><center>Contact</center></h2>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Customer Contact</label>
-                                    <input type="number" name="coustmer_contact" value="{{$pantshirt->coustmer_contact}}" placeholder="Enter Contact" class="form-control" required>
+                                    <input type="text" name="coustmer_contact" value="{{$pantshirt->coustmer_contact}}" placeholder="Enter Contact" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Customer Address</label>

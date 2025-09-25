@@ -22,7 +22,6 @@ class PantShirt extends Model
         'sleeve',
         'arm',
         'neck',
-        'collar',
         'collar_size',
         'cuff',
         'shirt_pocket',

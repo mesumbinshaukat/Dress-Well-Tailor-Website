@@ -52,6 +52,7 @@
                                     <label class="font-weight-bold">Bress</label>
                                     <div class="form-group">
                                         <select class="form-control" name="bress" >
+                                            <option value="" {{$suit->bress == "" ? 'selected' : ''}}></option>
                                             <option value="nothing" {{$suit->bress == "nothing" ? 'selected' : ''}}>nothing</option>
                                             <option value="single" {{$suit->bress == "single" ? 'selected' : ''}}>single</option>
                                             <option value="double" {{$suit->bress == "double" ? 'selected' : ''}}>double</option>
@@ -80,7 +81,7 @@
                                 <div class="mb-3 col-md-6">
                                     <label class="font-weight-bold">Daman</label>
                                     <div class="form-group">
-                                        <select class="form-control" name="daman" value="{{$suit->daman}}">
+                                        <select class="form-control" name="daman">
                                             <option value="" {{$suit->daman == "" ? 'selected' : ''}}></option>
                                             <option value="nothing" {{$suit->daman == "nothing" ? 'selected' : ''}}>nothing</option>
                                             <option value="round" {{$suit->daman == "round" ? 'selected' : ''}}>round</option>
@@ -109,8 +110,8 @@
                                 <div class="mb-3 col-md-6">
                                     <label class="font-weight-bold">Chaak</label>
                                     <div class="form-group">
-                                        <select class="form-control" name="chaak" value="{{$suit->chaak}}">
-                                            <option value=""{{$suit->chaak == "" ? 'selected' : ''}}></option>
+                                        <select class="form-control" name="chaak">
+                                            <option value="" {{$suit->chaak == "" ? 'selected' : ''}}></option>
                                             <option value="nothing" {{$suit->chaak == "nothing" ? 'selected' : ''}}>nothing</option>
                                             <option value="side_chaak" {{$suit->chaak == "side_chaak" ? 'selected' : ''}}>side_chaak</option>
                                             <option value="back_chaak" {{$suit->chaak == "back_chaak" ? 'selected' : ''}}>back_chaak</option>
@@ -249,7 +250,7 @@
                                 <h2 class="text-primary"><center>Contact</center></h2>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Coustmer Contact</label>
-                                    <input type="number" name="coustmer_contact" value="{{$suit->coustmer_contact}}" placeholder="Enter Contact" class="form-control" required>
+                                    <input type="text" name="coustmer_contact" value="{{$suit->coustmer_contact}}" placeholder="Enter Contact" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Coustmer Address</label>

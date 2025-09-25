@@ -98,7 +98,7 @@ class CoatController extends Controller
             $datel->neck = $request->neck;
             $datel->Kuffs = $request->Kuffs;
             $datel->kuff = $request->kuff;
-            $datel->collar = $request->collar;
+            // $datel->collar = $request->collar; // Removed - using collar_size instead
             $datel->collar_size = $request->collar_size;
             $datel->patti = $request->patti;
             $datel->daman = $request->daman;

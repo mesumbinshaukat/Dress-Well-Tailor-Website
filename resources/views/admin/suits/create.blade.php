@@ -52,9 +52,9 @@
                                     <div class="form-group">
                                         <select class="form-control" name="bress">
                                             <option value=""></option>
-                                            <option value="Nothing">Nothing</option>
-                                            <option value="Single">Single</option>
-                                            <option value="Double">Double</option>
+                                            <option value="nothing">nothing</option>
+                                            <option value="single">single</option>
+                                            <option value="double">double</option>
                                         </select>
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@
                                     <div class="form-group">
                                         <select class="form-control" name="kaj">
                                             <option value=""></option>
-                                            <option value="Nothing">Nothing</option>
+                                            <option value="nothing">nothing</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                         </select>
@@ -82,9 +82,9 @@
                                     <div class="form-group">
                                         <select class="form-control" name="daman">
                                             <option value=""></option>
-                                            <option value="Nothing">Nothing</option>
-                                            <option value="Round">Round</option>
-                                            <option value="Square">Square</option>
+                                            <option value="nothing">nothing</option>
+                                            <option value="round">round</option>
+                                            <option value="square">square</option>
                                         </select>
                                     </div>
                                 </div>
@@ -147,9 +147,9 @@
                                     <div class="form-group">
                                         <select class="form-control" name="pocket">
                                             <option value=""></option>
-                                            <option value="Nothing">Nothing</option>
-                                            <option value="Cross">Cross</option>
-                                            <option value="Straight">Straight</option>
+                                            <option value="nothing">nothing</option>
+                                            <option value="cross">cross</option>
+                                            <option value="straight">straight</option>
                                         </select>
                                     </div>
                                 </div>
@@ -162,7 +162,7 @@
                                     <div class="form-group">
                                         <select class="form-control" name="hip_pocket">
                                             <option value=""></option>
-                                            <option value="Nothing">Nothing</option>
+                                            <option value="nothing">nothing</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                         </select>
@@ -177,10 +177,10 @@
                                     <div class="form-group">
                                         <select class="form-control" name="s_bottom">
                                             <option value=""></option>
-                                            <option value="Nothing">Nothing</option>
-                                            <option value="Turpai">Turpai</option>
-                                            <option value="Slai">Slai</option>
-                                            <option value="Folding">Folding</option>
+                                            <option value="nothing">nothing</option>
+                                            <option value="turpai">turpai</option>
+                                            <option value="slai">slai</option>
+                                            <option value="folding">folding</option>
                                         </select>
                                     </div>
                                 </div>
@@ -257,7 +257,7 @@
                                 <h2 class="text-primary"><center>Contact</center></h2>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Coustmer Contact</label>
-                                    <input type="number" name="coustmer_contact" placeholder="Enter Contact" class="form-control" required>
+                                    <input type="text" name="coustmer_contact" placeholder="Enter Contact" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Coustmer Address</label>

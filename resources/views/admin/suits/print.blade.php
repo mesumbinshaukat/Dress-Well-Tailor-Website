@@ -425,7 +425,7 @@
                         <td><b>Name:</b> <span style="float: right; margin-right: 5px;">{{$suit->coustmer_name}}</span></td>
                         <td><b>Length:</b> <span style="float: right; margin-right: 5px;">{{$suit->length ?? 'N/A'}}</span></td>
                         <td><b>Length:</b> <span style="float: right; margin-right: 5px;">{{$suit->pent_length ?? 'N/A'}}</span></td>
-                        <td rowspan="16">@if($suit->textarea)<b>Special Instructions:</b><br>{{$suit->textarea}}@endif</td>
+                        <td rowspan="16">@if($suit->textarea)<b></b><br>{{$suit->textarea}}@endif</td>
                     </tr>
                     <tr>
                         <td><b>Order No.:</b> <span style="float: right; margin-right: 5px;">{{$suit->id}}</span></td>

@@ -94,7 +94,7 @@ class PantShirtController extends Controller
             $pantShirt->sleeve = $request->sleeve;
             $pantShirt->arm = $request->arm;
             $pantShirt->neck = $request->neck;
-            $pantShirt->collar = $request->collar;
+            // $pantShirt->collar = $request->collar; // Removed - using collar_size instead
             $pantShirt->collar_size = $request->collar_size;
             $pantShirt->cuff = $request->cuff;
             $pantShirt->shirt_pocket = $request->shirt_pocket;

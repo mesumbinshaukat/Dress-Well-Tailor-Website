@@ -210,8 +210,8 @@
                                     <label class="font-weight-bold">Wallet Pocket</label>
                                     <div class="form-group">
                                         <select class="form-control" name="wal_pocket">
-                                            <option value="nothing">nothing</option>
                                             <option value="" {{$coat->wal_pocket == "" ? 'selected' : ''}}></option>
+                                            <option value="nothing" {{$coat->wal_pocket == "nothing" ? 'selected' : ''}}>nothing</option>
                                             <option value="1" {{$coat->wal_pocket == "1" ? 'selected' : ''}}>1</option>
                                             <option value="2" {{$coat->wal_pocket == "2" ? 'selected' : ''}}>2</option>
                                             <option value="3" {{$coat->wal_pocket == "3" ? 'selected' : ''}}>3</option>
@@ -300,7 +300,7 @@
                                 <h2 class="text-primary"><center>Contact</center></h2>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Coustmer Contact</label>
-                                    <input type="number" name="coustmer_contact" value="{{$coat->coustmer_contact}}" placeholder="Enter Contact" class="form-control" required>
+                                    <input type="text" name="coustmer_contact" value="{{$coat->coustmer_contact}}" placeholder="Enter Contact" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Coustmer Address</label>

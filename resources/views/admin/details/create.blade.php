@@ -48,16 +48,9 @@
                                     <input type="text" name="length" placeholder="Enter length" class="form-control">
                                 </div>
                                 <!---2---->
-                                <div class="mb-3 col-md-6">
-                                    <label class="font-weight-bold">Collar</label>
-                                    <div class="form-group">
-                                        <select class="form-control" name="collar">
-                                            <option value=""></option>
-                                            <option value="Nothing">Nothing</option>
-                                            <option value="Shirt-Collar">Shirt-Collar</option>
-                                            <option value="Serwani-Collar">Serwani-Collar</option>
-                                        </select>
-                                    </div>
+                                <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Collar Size</label>
+                                    <input type="number" name="collar_size" placeholder="Enter Collar Size" class="form-control" step="0.1" required>
                                 </div>
                                 <!---end 2---->
                                 <div class="mb-3 form-group col-md-6">
@@ -70,9 +63,9 @@
                                                                     <div class="form-group">
                                                                         <select class="form-control" name="daman">
                                                                             <option value=""></option>
-                                                                            <option value="Nothing">Nothing</option>
-                                                                            <option value="Round">Round</option>
-                                                                            <option value="Square">Square</option>
+                                                                            <option value="nothing">nothing</option>
+                                                                            <option value="round">round</option>
+                                                                            <option value="square">square</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -103,7 +96,7 @@
                                                                     <div class="form-group">
                                                                         <select class="form-control" name="side_pocket">
                                                                             <option value=""></option>
-                                                                            <option value="No">No</option>
+                                                                            <option value="no">no</option>
                                                                             <option value="1">1</option>
                                                                             <option value="2">2</option>                                                                              
                                                                         </select>
@@ -120,7 +113,7 @@
                                                                     <div class="form-group">
                                                                         <select class="form-control" name="front_pocket">
                                                                             <option value=""></option>
-                                                                            <option value="No">No</option>
+                                                                            <option value="no">no</option>
                                                                             <option value="1">1</option>
                                                                             <option value="2">2</option>                                                                              
                                                                         </select>
@@ -171,9 +164,9 @@
                                     <div class="form-group">
                                         <select class="form-control" name="pajama">
                                             <option value=""></option>
-                                            <option value="No">No</option>
-                                            <option value="Pajama">Pajama</option>
-                                            <option value="Pent-Pajama">Pent-Pajama</option>                                                                              
+                                            <option value="no">no</option>
+                                            <option value="pajama">pajama</option>
+                                            <option value="pent_pajama">pent_pajama</option>                                                                              
                                         </select>
                                     </div>
                                 </div>
@@ -186,8 +179,8 @@
                                     <div class="form-group">
                                         <select class="form-control" name="pocket">
                                             <option value=""></option>
-                                            <option value="No">No</option>
-                                            <option value="Yes">Yes</option>                                                                              
+                                            <option value="no">no</option>
+                                            <option value="yes">yes</option>                                                                              
                                         </select>
                                     </div>
                                 </div>
@@ -200,8 +193,8 @@
                                     <div class="form-group">
                                         <select class="form-control" name="lastic">
                                             <option value=""></option>
-                                            <option value="No">No</option>
-                                            <option value="Yes">Yes</option>                                                                              
+                                            <option value="no">no</option>
+                                            <option value="yes">yes</option>                                                                              
                                         </select>
                                     </div>
                                 </div>
@@ -243,7 +236,7 @@
                                 <h2 class="text-primary"><center>Contact</center></h2>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Coustmer Contact</label>
-                                    <input type="number" name="coustmer_contact" placeholder="Enter Contact" class="form-control" required>
+                                    <input type="text" name="coustmer_contact" placeholder="Enter Contact" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Coustmer Address</label>

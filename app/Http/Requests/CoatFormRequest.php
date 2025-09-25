@@ -209,7 +209,7 @@ class CoatFormRequest extends FormRequest
                 
             ],
             "coustmer_contact"=>[
-                'digits:11',
+                
 
             ],
         ];

@@ -416,7 +416,7 @@
                         <td><b>Name:</b> {{$coat->coustmer_name}}</td>
                         <td><b>Length:</b> {{$coat->length ?? 'N/A'}}</td>
                         <td><b>Coat Length:</b> {{$coat->coat_length ?? 'N/A'}}</td>
-                        <td rowspan="18">@if($coat->textarea)<b>Special Instructions:</b><br>{{$coat->textarea}}@endif</td>
+                        <td rowspan="18">@if($coat->textarea)<b></b><br>{{$coat->textarea}}@endif</td>
                     </tr>
                     <tr>
                         <td><b>Order No.:</b> {{$coat->id}}</td>

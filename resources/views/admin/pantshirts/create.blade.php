@@ -52,10 +52,10 @@
                                     <div class="form-group">
                                         <select class="form-control" name="collar">
                                             <option value=""></option>
-                                            <option value="regular">Regular</option>
-                                            <option value="button_down">Button Down</option>
-                                            <option value="spread">Spread</option>
-                                            <option value="cutaway">Cutaway</option>
+                                            <option value="regular">regular</option>
+                                            <option value="button_down">button_down</option>
+                                            <option value="spread">spread</option>
+                                            <option value="cutaway">cutaway</option>
                                         </select>
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
                                     <div class="form-group">
                                         <select class="form-control" name="shirt_pocket">
                                             <option value=""></option>
-                                            <option value="no">No</option>
+                                            <option value="no">no</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                         </select>
@@ -87,9 +87,9 @@
                                     <div class="form-group">
                                         <select class="form-control" name="shirt_fitting">
                                             <option value=""></option>
-                                            <option value="slim">Slim</option>
-                                            <option value="regular">Regular</option>
-                                            <option value="loose">Loose</option>
+                                            <option value="slim">slim</option>
+                                            <option value="regular">regular</option>
+                                            <option value="loose">loose</option>
                                         </select>
                                     </div>
                                 </div>
@@ -130,10 +130,10 @@
                                     <div class="form-group">
                                         <select class="form-control" name="pant_pocket">
                                             <option value=""></option>
-                                            <option value="no">No</option>
-                                            <option value="side">Side</option>
-                                            <option value="back">Back</option>
-                                            <option value="both">Both</option>
+                                            <option value="no">no</option>
+                                            <option value="side">side</option>
+                                            <option value="back">back</option>
+                                            <option value="both">both</option>
                                         </select>
                                     </div>
                                 </div>
@@ -150,9 +150,9 @@
                                     <div class="form-group">
                                         <select class="form-control" name="pant_fitting">
                                             <option value=""></option>
-                                            <option value="slim">Slim</option>
-                                            <option value="regular">Regular</option>
-                                            <option value="loose">Loose</option>
+                                            <option value="slim">slim</option>
+                                            <option value="regular">regular</option>
+                                            <option value="loose">loose</option>
                                         </select>
                                     </div>
                                 </div>
@@ -203,7 +203,7 @@
                                 <h2 class="text-primary"><center>Contact</center></h2>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Customer Contact</label>
-                                    <input type="number" name="coustmer_contact" placeholder="Enter Contact" class="form-control" required>
+                                    <input type="text" name="coustmer_contact" placeholder="Enter Contact" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Customer Address</label>

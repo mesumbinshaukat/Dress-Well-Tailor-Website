@@ -75,8 +75,8 @@
                                         <select class="form-control" name="daman">
                                             <option value=""></option>
                                             <option value="nothing">nothing</option>
-                                            <option value="Round">Round</option>
-                                            <option value="Square">Square</option>
+                                            <option value="round">round</option>
+                                            <option value="square">square</option>
                                         </select>
                                     </div>
                                 </div>
@@ -139,12 +139,12 @@
                                     <div class="form-group">
                                         <select class="form-control" name="shirt_pocket">
                                             <option value=""></option>
-                                            <option value="no">No</option>
+                                            <option value="no">no</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
-                                            <option value="nothing">Nothing</option>
-                                            <option value="simple">Simple</option>
-                                            <option value="flape">Flape</option>
+                                            <option value="nothing">nothing</option>
+                                            <option value="simple">simple</option>
+                                            <option value="flape">flape</option>
                                         </select>
                                     </div>
                                 </div>
@@ -153,9 +153,9 @@
                                     <div class="form-group">
                                         <select class="form-control" name="shirt_fitting">
                                             <option value=""></option>
-                                            <option value="slim">Slim</option>
+                                            <option value="slim">slim</option>
                                             <option value="regular">Regular</option>
-                                            <option value="loose">Loose</option>
+                                            <option value="loose">loose</option>
                                         </select>
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@
                                     <div class="form-group">
                                         <select class="form-control" name="pocket">
                                             <option value=""></option>
-                                            <option value="nothing">Nothing</option>
+                                            <option value="nothing">nothing</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                         </select>
@@ -301,7 +301,7 @@
                                 <h2 class="text-primary"><center>Contact</center></h2>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Coustmer Contact</label>
-                                    <input type="number" name="coustmer_contact" placeholder="Enter Contact" class="form-control" required>
+                                    <input type="text" name="coustmer_contact" placeholder="Enter Contact" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Coustmer Address</label>

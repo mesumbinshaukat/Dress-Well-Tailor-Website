@@ -49,16 +49,9 @@
                                     <input type="text" name="length" value="{{$detail->length}}" placeholder="Enter length" class="form-control">
                                 </div>
                                                                 <!---2---->
-                                <div class="mb-3 col-md-6">
-                                    <label class="font-weight-bold">Collar</label>
-                                    <div class="form-group">
-                                        <select class="form-control" name="collar">
-                                            <option value="" {{$detail->collar == "" ? 'selected' : ''}}></option>
-                                            <option value="nothing" {{$detail->collar == "nothing" ? 'selected' : ''}}>nothing</option>
-                                            <option value="shirt_collar" {{$detail->collar == "shirt_collar" ? 'selected' : ''}}>shirt_collar</option>
-                                            <option value="sherwani_collar" {{$detail->collar == "sherwani_collar" ? 'selected' : ''}}>sherwani_collar</option>
-                                        </select>
-                                    </div>
+                                <div class="mb-3 form-group col-md-6">
+                                    <label class="font-weight-bold">Collar Size</label>
+                                    <input type="number" name="collar_size" value="{{$detail->collar_size}}" placeholder="Enter Collar Size" class="form-control" step="0.1" required>
                                 </div>
                                 <!---end 2---->
                                 <div class="mb-3 form-group col-md-6">
@@ -236,7 +229,7 @@
                                 <h2 class="text-primary"><center>Contact</center></h2>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Coustmer Contact</label>
-                                    <input type="number" name="coustmer_contact" value="{{$detail->coustmer_contact}}" placeholder="Enter Contact" class="form-control" required>
+                                    <input type="text" name="coustmer_contact" value="{{$detail->coustmer_contact}}" placeholder="Enter Contact" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="font-weight-bold">Coustmer Address</label>

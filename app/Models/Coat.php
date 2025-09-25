@@ -24,7 +24,6 @@ class Coat extends Model
         'neck',
         'kuffs',
         'kuff',
-        'collar',
         'collar_size',
         'patti',
         'daman',

@@ -199,7 +199,7 @@ class SuitFormRequest extends FormRequest
                 
             ],
             "coustmer_contact"=>[
-                'digits:11',
+                
 
             ],
         ];

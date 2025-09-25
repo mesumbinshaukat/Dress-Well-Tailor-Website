@@ -263,13 +263,14 @@
 
 
                         </tr>
+                        
+                        @if($detail->collar_size)
                         <tr>
                             <td></td>
-                            <td class="text-dark h5"><b>Collar:</b> <span class="pl-4"></span> {{$detail->collar}}</span></td>
+                            <td class="text-dark h5"><b>Collar Size:</b> <span class="pl-4"></span> {{$detail->collar_size}}</span></td>
                             <td></td>
-                            
-
                         </tr>
+                        @endif
                         <tr>
                             <td></td>
                             <td class="text-dark h5"><b>Kuff:</b> <span class="pl-4"></span> {{$detail->kuff}}</span></td>

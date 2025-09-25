@@ -115,7 +115,7 @@ class DetailController extends Controller
             $datel->front_pocket = $request->front_pocket;
             $datel->sleeve = $request->sleeve;
             $datel->fitting = $request->fitting;
-            $datel->collar = $request->collar;
+            $datel->collar_size = $request->collar_size;
             $datel->arm = $request->arm;
             $datel->neck = $request->neck;
             $datel->kuff = $request->kuff;

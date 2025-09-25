@@ -26,7 +26,7 @@ class Detail extends Model
         'arm',
         'neck',
         'fitting',
-        'collar',
+        'collar_size',
         'kuff',
         'patti',
         'daman',
