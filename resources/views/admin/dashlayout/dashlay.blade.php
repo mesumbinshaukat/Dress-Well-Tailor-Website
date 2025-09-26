@@ -132,7 +132,26 @@
     <script src="{{asset('admintheme/vendor/jquery.counterup/jquery.counterup.min.js')}}"></script>
 
 
-    <script src="{{asset('admintheme/')}}/js/dashboard/dashboard-1.js"></script>
+    <!-- Dashboard scripts with error handling -->
+    <script>
+    // Wrap dashboard scripts in try-catch to prevent errors
+    try {
+        // Only load dashboard scripts if required libraries are available
+        if (typeof Morris !== 'undefined' && typeof Chart !== 'undefined') {
+            // Load dashboard scripts
+            var script = document.createElement('script');
+            script.src = '{{asset("admintheme/js/dashboard/dashboard-1.js")}}';
+            script.onerror = function() {
+                console.log('Dashboard scripts failed to load, but page will continue to work');
+            };
+            document.head.appendChild(script);
+        } else {
+            console.log('Chart libraries not available, skipping dashboard charts');
+        }
+    } catch (e) {
+        console.log('Dashboard initialization error:', e);
+    }
+    </script>
     
     <!-- Fallback preloader hide -->
     <script>

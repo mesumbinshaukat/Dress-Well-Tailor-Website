@@ -9,7 +9,6 @@ use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Detail;
 use App\Models\Suit;
 use App\Models\Coat;
-use App\Models\PantShirt;
 
 class AdminController extends Controller
 {
@@ -107,22 +106,6 @@ class AdminController extends Controller
             }
         }
 
-        if ($module === 'all' || $module === 'pantshirts') {
-            $pantshirts = PantShirt::where('coustmer_name', 'LIKE', "%{$query}%")
-                ->orWhere('category', 'LIKE', "%{$query}%")
-                ->limit(5)
-                ->get();
-            
-            foreach ($pantshirts as $pantshirt) {
-                $results[] = [
-                    'id' => $pantshirt->id,
-                    'customer_name' => $pantshirt->coustmer_name,
-                    'category' => $pantshirt->category,
-                    'module' => 'Pant & Shirt',
-                    'url' => route('pantshirts.show', $pantshirt->id)
-                ];
-            }
-        }
 
         // Sort results by relevance (exact matches first)
         usort($results, function($a, $b) use ($query) {
