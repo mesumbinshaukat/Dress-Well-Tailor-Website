@@ -17,6 +17,20 @@
             .no-print {
                 display: none;
             }
+            .col-md-6 {
+                width: 50% !important;
+                float: left !important;
+                display: inline-block !important;
+            }
+            .row {
+                display: block !important;
+                width: 100% !important;
+            }
+            .row::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
         }
         .back1 {
             width: 70px;
@@ -25,6 +39,21 @@
         }
         .back6 {
             background: white;
+        }
+        /* Ensure columns work on screen too */
+        .col-md-6 {
+            width: 50%;
+            float: left;
+            padding: 0 15px;
+        }
+        .row {
+            display: block;
+            width: 100%;
+        }
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
         }
     </style>
     <title>slip</title>
