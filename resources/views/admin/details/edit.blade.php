@@ -34,7 +34,6 @@
                                             <option value="kameez/shalwar" {{$detail->category == "kameez/shalwar" ? 'selected' : ''}}>kameez/shalwar</option>
                                             <option value="kameez" {{$detail->category == "kameez" ? 'selected' : ''}}>kameez</option>
                                             <option value="shalwar" {{$detail->category == "shalwar" ? 'selected' : ''}}>shalwar</option>
-                                            <option value="kurta & pajama" {{$detail->category == "kurta & pajama" ? 'selected' : ''}}>kurta & pajama</option>
                                         </select>
                                     </div>
                                 </div>

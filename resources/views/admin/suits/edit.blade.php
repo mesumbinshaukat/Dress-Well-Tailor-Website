@@ -34,7 +34,6 @@
                                             <option value="coat/pent" {{$suit->category == "coat/pent" ? 'selected' : ''}}>coat/pent</option>
                                             <option value="coat" {{$suit->category == "coat" ? 'selected' : ''}}>coat</option>
                                             <option value="pent" {{$suit->category == "pent" ? 'selected' : ''}}>pent</option>
-                                            <option value="sherwani" {{$suit->category == "sherwani" ? 'selected' : ''}}>Sherwani</option>
                                         </select>
                                     </div>
                                 </div>

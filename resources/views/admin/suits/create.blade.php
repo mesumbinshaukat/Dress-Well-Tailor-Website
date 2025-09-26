@@ -33,7 +33,6 @@
                                             <option value="coat/pent">coat/pent</option>
                                             <option value="coat">coat</option>
                                             <option value="pent">pent</option>
-                                            <option value="sherwani">Sherwani</option>
                                         </select>
                                     </div>
                                 </div>

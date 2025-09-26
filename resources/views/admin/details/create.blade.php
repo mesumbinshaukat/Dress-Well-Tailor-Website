@@ -33,7 +33,6 @@
                                             <option value="kameez/shalwar">kameez/shalwar</option>
                                             <option value="kameez">kameez</option>
                                             <option value="shalwar">shalwar</option>
-                                            <option value="kurta & pajama">kurta & pajama</option>
                                         </select>
                                     </div>
                                 </div>
