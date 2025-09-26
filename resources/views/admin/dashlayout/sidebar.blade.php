@@ -59,42 +59,6 @@
 
     </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Pant & Shirt
-    </div>
-
-    <!-- Nav Item - Pant & Shirt Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('pantshirts.create')}}">
-            <i class="fa fa-plus-circle"></i>
-            <span>Add Pant & Shirt</span>
-        </a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('pantshirts.index')}}">
-            <i class="fa fa-list"></i>
-            <span>Show Pant & Shirt</span>
-        </a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('pantshirts.index')}}">
-            <i class="fa fa-edit"></i>
-            <span>Edit Pant & Shirt</span>
-        </a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('pantshirts.index')}}">
-            <i class="fa fa-trash"></i>
-            <span>Delete Pant & Shirt</span>
-        </a>
-    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">

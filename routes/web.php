@@ -20,7 +20,6 @@ use App\Http\Controllers\CoatController;
 Route::resource('details',App\Http\Controllers\DetailController::class);
 Route::resource('suits',App\Http\Controllers\SuitController::class);
 Route::resource('coats',App\Http\Controllers\CoatController::class);
-Route::resource('pantshirts',App\Http\Controllers\PantShirtController::class);
 
 Route::get('/', function () {
     return view('welcome');
