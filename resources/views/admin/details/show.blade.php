@@ -14,53 +14,17 @@
 <link rel="stylesheet" href="{{asset('admintheme/css/index.css')}}">
     <style>
         @media print {
-            body { 
-                margin: 0 !important; 
-                padding: 0 !important;
-                font-size: 12px !important;
+            .no-print {
+                display: none;
             }
-            .maindiv {
-                margin: 0 !important;
-                padding: 10px !important;
-                margin-bottom: 0 !important;
-            }
-            .border {
-                border: 2px solid #000 !important;
-                height: auto !important;
-            }
-            .table {
-                font-size: 11px !important;
-                margin: 0 !important;
-            }
-            .table th, .table td {
-                padding: 4px !important;
-                border: 1px solid #000 !important;
-            }
-            .h4, .h5 {
-                font-size: 12px !important;
-                margin: 2px 0 !important;
-            }
-            .text-center {
-                text-align: center !important;
-            }
-            .row {
-                margin: 2px 0 !important;
-            }
-            .col-md-6 {
-                width: 50% !important;
-                float: left !important;
-            }
-            .col-md-12 {
-                width: 100% !important;
-            }
-            .customer-note {
-                background: #f8f9fa !important;
-                border: 1px solid #000 !important;
-                padding: 8px !important;
-                margin: 10px 0 !important;
-                font-weight: bold !important;
-                text-align: center !important;
-            }
+        }
+        .back1 {
+            width: 70px;
+            height: 70px;
+            margin-left: 2%;
+        }
+        .back6 {
+            background: white;
         }
     </style>
     <title>slip</title>
@@ -108,25 +72,25 @@
                     <div> <span class="fw-bolder text-dark"><b>Address: </b>{{$detail->coustmer_address}}</span> </div>
                 </div>
                 <div class="col-md-6">
-                    <div> <span class="fw-bolder text-dark"><b>Remaining Amount: </b>{{ $detail->total_amount - $detail->advance }}</span> </div>
+                    <div> <span class="fw-bolder text-dark"><b>Total Amount: </b>{{$detail->total_amount}}</span> </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div> <span class="fw-bolder text-dark"><b>Category: </b>{{$detail->category}}</span> </div>
                 </div>
-               <div class="col-md-6">
-                    <div> <span class="fw-bolder text-dark"><b>Total Amount: </b>{{$detail->total_amount}}</span> </div>
+                <div class="col-md-6">
+                    <div> <span class="fw-bolder text-dark"><b>Working Branch: </b>Gulistan-e-Johar</span> </div>
                 </div>
+              
             </div>
+
             <div class="row">
                 <div class="col-md-6">
                     <div> <span class="fw-bolder text-dark"><b>Quantity: </b>{{$detail->quantity}}</span> </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div> <span class="fw-bolder text-dark"><b>Working Branch: </b>Gulistan-e-Johar</span> </div>
-                </div>
+                
             </div>
     </div>
 </div>
@@ -260,9 +224,7 @@
                     </tbody>
                 </table>
               </div>
-              <div class="customer-note text-center my-3 p-2 bg-light border">
-                <p class="text-danger h5 mb-0"><strong>Customer are advised to collect their order within 2 months positively.</strong></p>
-              </div>
+              
               <div class="row" style="margin-top: 2%;">
                 <div class="col-md-12 text-center py-2">
                     <p class="text-danger h4"><i>Specialist in Coat, Pant, Sherwani & Shalwar Kameez</i> </p>
