@@ -127,13 +127,40 @@
     <!-- Owl Carousel -->
     <script src="{{asset('admintheme/vendor/owl-carousel/js/owl.carousel.min.js')}}"></script>
 
-    <!-- Counter Up -->
     <script src="{{asset('admintheme/vendor/jqvmap/js/jquery.vmap.min.js')}}"></script>
     <script src="{{asset('admintheme/vendor/jqvmap/js/jquery.vmap.usa.js')}}"></script>
     <script src="{{asset('admintheme/vendor/jquery.counterup/jquery.counterup.min.js')}}"></script>
 
 
     <script src="{{asset('admintheme/')}}/js/dashboard/dashboard-1.js"></script>
+    
+    <!-- Fallback preloader hide -->
+    <script>
+    // Immediate fallback in case jQuery fails
+    setTimeout(function() {
+        var preloader = document.getElementById('preloader');
+        var mainWrapper = document.getElementById('main-wrapper');
+        if (preloader) preloader.style.display = 'none';
+        if (mainWrapper) mainWrapper.classList.add('show');
+    }, 1000);
+    
+    // jQuery version (if available)
+    if (typeof jQuery !== 'undefined') {
+        $(document).ready(function() {
+            // Hide preloader after 1.5 seconds as fallback
+            setTimeout(function() {
+                $('#preloader').fadeOut(500);
+                $('#main-wrapper').addClass('show');
+            }, 1500);
+            
+            // Also hide on window load (original functionality)
+            $(window).on('load', function() {
+                $('#preloader').fadeOut(500);
+                $('#main-wrapper').addClass('show');
+            });
+        });
+    }
+    </script>
 
 </body>
 
